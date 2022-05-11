@@ -6,21 +6,18 @@ class UserAPI {
   final String _urlBase = "https://reqres.in/api/users/3";
 
   Future<User> fetchUser() async {
+    // Single GET Method
     try {
       var response = await _dio.get(_urlBase);
-      return User.fromJson(response.data);
-      // if (response.statusCode == 200) {
-      //   return User(
-      //     id: response.data['data']['id'],
-      //     email: response.data['data']['email'],
-      //     name: response.data['data']['first_name'] +
-      //         ' ' +
-      //         response.data['data']['last_name'],
-      //   );
-      // }
-
+      if (response.statusCode == 200) {
+        return User.fromJson(response.data);
+      }
+     
+      return response.data;
     } catch (e) {
       throw Exception(e.toString());
     }
   }
+
+  
 }

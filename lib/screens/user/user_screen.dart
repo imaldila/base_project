@@ -6,6 +6,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class UserScreen extends StatelessWidget {
   const UserScreen({Key? key}) : super(key: key);
 
+  static const String routeName = '/user';
+  static Route route() {
+    return MaterialPageRoute(
+      settings: const RouteSettings(name: routeName),
+      builder: (_) => const UserScreen(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
