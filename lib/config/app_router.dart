@@ -1,9 +1,11 @@
-import 'package:base_project_flutter/screens/home_screen/home_screen.dart';
-import 'package:base_project_flutter/screens/user/user_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../screens/screens.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
+    // ignore: avoid_print
+    print('This is route : ${settings.name}');
     switch (settings.name) {
       case '/':
         return HomeScreen.route();

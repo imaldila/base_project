@@ -20,7 +20,12 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            TextButton(onPressed: () {}, child: const Text('GET SINGLE API'))
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/user');
+              },
+              child: const Text('GET SINGLE API'),
+            )
           ],
         ),
       ),
